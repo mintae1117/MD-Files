@@ -8,6 +8,12 @@
 | **SEMI** (Semi Common System) | [`semi/`](./semi/README.md) | `semi-spring` (Spring Boot 4, JDK 25, Flyway, MinIO) | `semi-react` (React + Vite, FSD, i18next 13 ns) | 반도체 공정 trace/target/일일 리포트 공통 시스템 |
 | **DUTCHBOY** (센서/설비 AI 분석) | [`dutchboy/`](./dutchboy/README.md) | `dutchboy-sensor-api` (Spring Boot 3.1, Java 17, MyBatis, PostgreSQL + TimescaleDB, Flyway) | `front-monorepo` (pnpm + Turborepo, `apps/semes-v2`) | 설비 센서 데이터 대시보드·모델 분석·PM 관리 |
 
+## 설계 문서 미러
+
+| 폴더 | 내용 |
+|---|---|
+| [`coredb/`](./coredb/README.md) | **COREDB (Universal DB)** — 사내 통합 제조 DB 설계 스페이스의 Confluence 원문 사본(2026-10-12). PostgreSQL 단일 스키마 v2.2(18테이블, 불변식 I1–I14) + MinIO Parquet 파일 레인으로 어떤 제조 도메인(에처·STDF 테스트·카메라모듈·배관)도 스키마 변경 없이 흡수하는 설계. 스키마 명세·DDL 3블록·데이터 엔지니어 런북·쿼리 관례·결정 로그 D-001~050·도메인 팩·필드테스트·운영 |
+
 ## 각 프로젝트 폴더 구성
 
 | 파일 | 내용 |
@@ -22,3 +28,4 @@
 - 2026-10-06 기준 각 리포의 실제 코드를 읽고 작성했다(기준 커밋은 각 문서 상단 메타 블록에 표기). 코드에서 확인하지 못한 부분은 "(추정)" 으로 표시했다.
 - **비밀값·사내 호스트·개인 식별 정보는 제외**했다. 환경변수는 이름만 적고 값은 `<PLACEHOLDER>` 로 바꿨으며, 사내 서버는 `<STAGING_HOST>` 같은 역할명으로 일반화했다.
 - 다이어그램은 GitHub 이 렌더링하는 mermaid 로 작성했다.
+- `coredb/` 는 Confluence 페이지를 요약 없이 그대로 저장한 미러다. 사내 Confluence 호스트는 `<CONFLUENCE_HOST>`, 동결된 Notion 아카이브 링크는 `<NOTION_ARCHIVE_LINK>` 로 바꿨고, 페이지 간 링크는 저장소 안의 상대 경로로 바꿨다. 영문 페이지가 정본이고 `-KO` 파일은 번역본이다.
